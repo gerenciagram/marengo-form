@@ -37,8 +37,8 @@ export default {
 	},
 	methods: {
 		check() {
-			this.error = this.securityLevel < 2 ? 'form.error.password.small' : null
-			this.errorConfirm = !this.passwordMatch ? 'form.error.password.different' : null
+			this.error = this.securityLevel < 2 ? 'Invalid field length' : null
+			this.errorConfirm = !this.passwordMatch ? 'Fields don\'t match' : null
 		}
 	},
 	watch: {

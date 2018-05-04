@@ -18,8 +18,7 @@ const config = {
 		required: 'Required field',
 		email: 'Invalid email address',
 		phone: 'Invalid phone number',
-		length: 'Invalid field length',
-		match: 'Fields don\'t match'
+		length: 'Invalid field length'
 	}
 }
 
@@ -53,8 +52,15 @@ const templates = {
 	compare: (value, data) => {
 		let arrow = document.querySelector(data[0]).value
 		let target = document.querySelector(data[1])
-		if (target.value && target.value != arrow) return false
-		else return true
+		if (target.value && target.value != arrow) {
+			error(target, target.getAttribute('data-error'))
+			status(target, false)
+		}
+		else {
+			error(target, false)
+			status(target, true)
+		}
+		return true
 	}
 }
 

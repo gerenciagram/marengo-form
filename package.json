@@ -1,11 +1,8 @@
 {
 	"name": "marengo-form",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "",
 	"main": "src/index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/gerenciagram/marengo-form.git"
@@ -13,7 +10,7 @@
 	"keywords": [
 		"marengo"
 	],
-	"author": "",
+	"author": "Lucas Paiva <lukspaiva95@gmail.com>",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/gerenciagram/marengo-form/issues"
