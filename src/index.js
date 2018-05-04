@@ -196,17 +196,22 @@ export default {
 						let form = vNode.elm.form.getAttribute(config.attributes.reference)
 						el.setAttribute(config.attributes.ref, form)
 						el.setAttribute(config.attributes.id, id)
-						Forms[form].childrens[id] = Object.assign({
-							valid: false,
-							selector: el
-						}, binding.value)
+						
 						let template = binding.value && binding.value['template'] ? binding.value['template'] : null
 						let error = binding.value && binding.value['error'] ? binding.value['error'] : null
+
 						el.onkeyup = (e) => {
 							mask(e.srcElement, template)
 						}
-						el.onchange = (e) => {
-							test(e.srcElement, template, error)
+						
+						if (!(binding.value.hasOwnProperty('required') && binding.value['required'] == false)) {
+							Forms[form].childrens[id] = Object.assign({
+								valid: false,
+								selector: el
+							}, binding.value)
+							el.onchange = (e) => {
+								test(e.srcElement, template, error)
+							}
 						}
 					})
 				}
