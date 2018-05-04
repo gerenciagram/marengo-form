@@ -55,12 +55,13 @@ const templates = {
 		if (target.value && target.value != arrow) {
 			error(target, target.getAttribute('data-error'))
 			status(target, false)
+			return false
 		}
 		else {
 			error(target, false)
 			status(target, true)
+			return true
 		}
-		return true
 	}
 }
 
